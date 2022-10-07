@@ -1,0 +1,28 @@
+
+@import url(chat.css);
+@import url(android.css) (min-width:300px);
+@import url(portatil.css) (min-width:600px);
+@import url(pc.css) (min-width:900px);
+@media screen and (max-width: 300px) {
+ /* estilos */
+}
+@media screen and (max-width: 600px) {
+/* Estilos */
+}
+/* Também podemos ver alguns exemplos de resoluções abaixo.
+
+Listagem 2: Largura de 200px até 640 px */
+
+@media screen and
+(min-width: 200px) and
+(max-width: 640px){}
+/* Listagem 3: Orientação Paisagem de pelo menos 600px: */
+
+@media screen and
+(min-width: 600px) and
+(orientation:landscape){}
+/* Listagem 4: Orientação retrato de menos de 380 px: */
+
+@media screen and
+(max-width: 380px) and
+(orientation:portrait){}

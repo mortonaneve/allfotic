@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable= 0">
+        <title>Allfotic</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
+		<!-- Imports JavaScripts -->
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-messaging.js"></script> 
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+        <script src="javascript/firebase-config.js"></script>		
+	</head>
+	<!--
+		C = Conteudo
+		T = Tela
+		Txt = Texto
+		Btn = Botao
+	-->
+	<body id="body">
+	<!-- Conteudo da pagina -->
+    <div class="CMain">
+		<div id="TMenuCentro">
+			<a>Animes</a>
+			<a>Mangas</a>
+			<a>Sobre</a>
+			<a>Contato</a>
+		</div>
+		<!-- <div>tela inicio</div> -->
+		<div id="TPerfil">
+			<h1> Perfil </h1>
+			<a>UID: </a>
+			<a id="TPerfilTxtUID"></a><br>
+			<a>Nome: </a>
+			<a id="TPerfilTxtNome"></a><br>
+			<a>Email: </a>
+			<a id="TPerfilTxtEmail"></a>
+		</div>
+		<!-- <div>tela Lista</div>
+		<div>tela Sobre</div> -->
+    </div>
+    <!-- Menu direito -->
+    <div class="CMenu">
+		<!-- Tela Menu -->
+		<div id="TMenu">
+			<h1 id="TMenuTxtSaudacao"> Olá </h1>
+			<a id="TMenuBtnPerfil" onclick="Telas(this);">Perfil</a>
+			<a>Lista</a>
+			<a>Sobre</a>
+			<a onclick="Sair()" style="color:#000;font-size:10px;">Sair</a>
+		</div>
+		<!-- Tela Login -->
+		<div id="TLogin">
+			<h1> Login </h1>
+			<label>Email</label>
+			<input type="email" id="TLoginTxtEmail"/>
+			<label>Senha</label>
+			<input class="" type="password" id="TLoginTxtSenha" minlength="6" maxlength="12"/>
+			<div class="group">
+				<div class="button" id="TLoginBtnEntrar" onclick="Entrar();">Entrar</div>
+				<div class="button" id="TLoginBtnCadastro" onclick="Telas(this);">Cadastrar</div>
+			</div>
+			<div class="button DivRodape" id="TLoginBtnSenha" onclick="Telas(this);">Esqueci a senha</div>
+		</div>
+		<!-- Tela Cadastro -->
+		<div id="TCadastro">
+			<h1> Cadastro </h1>
+			<label>Nome</label>
+			<input type="text" id="TCadastroTxtNome" minlength="4" maxlength="8"/>
+			<label>Email</label>
+			<input type="email" id="TCadastroTxtEmail"/>
+			<label>Senha</label>
+			<input class="" type="password" id="TCadastroTxtSenha1" minlength="6" maxlength="12" onKeyUp="verificaForcaSenha();" />
+			<label>Senha</label>
+			<input class="" type="password" id="TCadastroTxtSenha2" minlength="6" maxlength="12" onKeyUp="verificaForcaSenha();" />
+			<span id="TCadastroTxtStatus"></span>
+			<div class="button DivRodape" id="TCadastroBtnCadastrar" onclick="Cadastro()">Cadastrar</div>
+			<div class="button DivRodape" id="TCadastroBtnCancelar" onclick="Telas(this);">Cancelar</div>
+		</div>
+		<!-- Tela Esqueci a senha -->
+		<div id="TSenha">
+			<h1> Esqueci a senha </h1>
+			<label>Email</label>
+			<input type="email" id="TSenhaTxtEmail"/>
+			<div class="button DivRodape" onclick="Senha()">Enviar</div>
+			<div class="button DivRodape" id="TSenhaBtnCancelar" onclick="Telas(this);">Cancelar</div>
+		</div>
+		<!-- JavaScript validação da senha -->
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	</div>
+	<!-- Tela Chat -->
+	<div id="TChat">
+		<div></div>
+		<div></div>
+		<div id="wrapper">
+    
+			<div id="account">
+				<div id="table">
+					<div id="tabl"></div>
+				</div>
+				
+				<div id="allInput">
+				<a id="usname"></a>
+				<input id="uDtn" maxlength="70" placeholder="para" type="text">
+				<input id="umsg" maxlength="70" placeholder="message" type="text">
+				<button onclick="yconl()" id="sendmsg">send</button>
+				</div>
+			</div>
+			
+			</div>
+		
+	</div>
+	<!-- Burger container e Burger Button -->
+    <div class="burger" id="TBurgerBtnMenu" onclick="Telas(this);" draggable="true">
+        <div id="burgerBtn" >≡</div>
+    </div>
+	<!-- JavaScripts -->
+	<script src="javascript/chat.js"></script>
+	<script src="javascript/animacao-menu.js"></script>
+	<script src="javascript/firebase.js"></script>
+	</body>
+</html>
